@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>盒模型和BFC</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .father {
+    background: green;
+    margin-top: 100px;
+  }
+  .son {
+    height: 100px;
+    margin-top: 20px;
+    background: blue;
+    /* overflow: hidden; */
+  }
+  .parent {
+    height: 200px;
+    width: 200px;
+    background: orange;
+    border: 1px solid red;
+  }
+  .child {
+    height: 50px;
+    width: 50px;
+    background: green;
+    margin-top: 50px;
+  }
+</style>
+<body>
+  <div></div>
+  <h3>CSS盒模型</h3>
+  <p>标准盒模型的width/height：指的是内容content的宽和高</p>
+  <p>IE盒模型的width/height：指的是内容content + padding + border的宽和高</p>
+  <p>获取盒模型的宽/高：</p>
+  <ul>
+    <li>element.style.width/heigth（只能获取行内元素）</li>
+    <li>window.getComputedStyle(element).width/height（通用）</li>
+    <li>element.currentStyle.width/height（IE）</li>
+    <li>element.getBoundingClientRect().width/height（获取一个元素的相对于左上角的绝对位置，可以获取四个属性left,top,width,height）</li>
+  </ul>
+  <p>margin塌陷和margin重叠：</p>
+  <ul>
+    <li>标准文档流中，竖直方向的margin只会叠加，并取最大值</li>
+    <li>如果不在文档流中，比如浮动了，那是不存在margin重叠的</li>
+    <li>父子元素间使用margin会出现问题</li>
+  </ul>
+  <p>BFC（边距重叠解决方案）:</p>
+  <p>规则：</p>
+  <ul>
+    <li>BFC内部子元素在垂直方向发生边距重叠</li>
+    <li>BFC在页面中是独立的容器，外面的元素不会影响里面的元素，反之亦然</li>
+    <li>BFC区域不与旁边的float box区域重叠（可以用来清除浮动带来的影响）</li>
+    <li>计算BFC的高度时，浮动的子元素也参与计算</li>
+  </ul>
+  <p>如何生成：</p>
+  <ul>
+    <li>overflow: 不为visible，可以让属性是 hidden、auto【最常用】</li>
+    <li>浮动中：float的属性值不为none。意思是，只要设置了浮动，当前元素就创建了BFC</li>
+    <li>定位中：只要posiiton的值不是 static或者是relative即可，可以是absolute或fixed，也就生成了一个BFC</li>
+    <li>display为inline-block, table-cell, table-caption, flex, inline-flex</li>
+  </ul>
+
+  <section>
+    <!-- son设置100px高和10px的margin-top，但是父元素高度是100不是110。 -->
+    <!-- 给父元素设置overflow：hidden只后，父元素高变回110 -->
+    <div class="father">
+      <div class="son"></div>
+    </div>
+  </section>
+
+  <section>
+    <!-- child设置了margin-top之后，父元素也会跟着移动，父元素加上border可以解决这个问题 -->
+    <!-- 如果父亲没有border，那么儿子的margin实际上踹的是“流”，踹的是这“行”。所以，父亲整体也掉下来了 -->
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </section>
+</body>
+</html>
