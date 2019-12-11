@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTTP协议</title>
+</head>
+
+<body>
+  <h3>HTTP协议</h3>
+  <p>特点：</p>
+  <ul>
+    <li>无连接：连接一次就会断开，不会持续保持连接</li>
+    <li>无状态：请求结束之后，再次请求，服务器不会记住之前的状态</li>
+  </ul>
+  <p>HTTP报文的组成</p>
+  <ul>
+    <li>请求报文（请求行，请求头，空行，请求体）</li>
+    <li>响应报文（状态行，响应头，空行，响应体）</li>
+  </ul>
+  <p>HTTP方法</p>
+  <ul>
+    <li>GET获取资源</li>
+    <li>POST传输资源</li>
+    <li>PUT更新资源</li>
+    <li>DELETE删除资源</li>
+    <li>HEAD获得报文首部</li>
+  </ul>
+  <p>GET和POST</p>
+  <ul>
+    <li>get的参数直接暴露在url中，相对不安全，post的参数是放在请求体中</li>
+    <li>get请求在url中传递的参数有大小限制</li>
+    <li>get请求的参数会保存在浏览器的历史记录里面，post不会</li>
+    <li>get请求会被浏览器主动缓存，post不会（重点）</li>
+    <li>浏览器返回时，get不会重新请求，post会，跟上一条相关联（重点）</li>
+  </ul>
+  <p>状态码</p>
+  <ul>
+    <li>1xx：请求已被接收，继续处理</li>
+    <li>2xx：请求已被成功接收</li>
+    <li>3xx：重定向</li>
+    <li>4xx：客户端错误</li>
+    <li>5xx：服务器错误</li>
+  </ul>
+  <p>部分解释</p>
+  <ul>
+    <li>301：永久重定向</li>
+    <li>302：临时重定向</li>
+    <li>304：表示本地已有缓存，不需要从服务器取</li>
+    <li>403：请求被拒绝</li>
+  </ul>
+  <p>待续</p>
+  <script>
+    function Parent () {
+      this.name = 'parent'
+      this.arr = [1, 2, 3]
+    }
+    Parent.prototype.getName = function () {
+      console.log(this.name)
+    }
+    console.log(Parent.prototype)
+    function Child () {
+      // Parent.call(this)
+      this.value = 'child'
+    }
+    Child.prototype = new Parent()
+    let child = new Child()
+    let child2 = new Child()
+
+    // child.arr = [1, 2] // 赋值了一个新数组，这样测试有误
+    child.arr.push(4)
+    console.log(child.arr)
+    console.log(child2.arr)
+  </script>
+</body>
+
+</html>
