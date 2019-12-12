@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>跨域通信</title>
+</head>
+<body>
+  <h3>跨域通信</h3>
+  <p>同源策略的解释</p>
+  <ul>
+    <li>限制 从一个源加载的文档or脚本 如何与 另一个源的资源进行交互</li>
+    <li>源包括了协议，域名，端口号，有一个不同则为跨域</li>
+    <li>跨域的话这个源的文件无法操作另一个源的文件</li>
+    <li>Cookie、LocalStorage，IndexDB无法获取</li>
+    <li>无法获取DOM</li>
+    <li>不能发送Ajax</li>
+  </ul>
+  <p>前后端的通信方式</p>
+  <ul>
+    <li>Ajax</li>
+    <li>WebScoket（服务器也能主动发送请求给客户端，支持跨域）</li>
+    <li>CORS（支持跨域，新的通信标准，类似支持同源跟跨域的Ajax）</li>
+  </ul>
+  <p>如何创建Ajax</p>
+  <ul>
+    <li>注意XMLHttpRequest的工作原理，兼容性</li>
+    <li>注意事件的触发条件，触发顺序</li>
+    <li>
+      步骤：创建XMLHR对象，使用open方法设置参数，send方法发送，注册回调事件onreadystatechange，
+            当状态改变的时候就会调用，在方法中获取需要的数据
+    </li>
+  </ul>
+  <p>跨域通信的方式</p>
+  <ul>
+    <li>JSONP：通过script标签的异步加载来实现</li>
+    <li>WebScoket：</li>
+    <li>CORS：跨域时，浏览器会拦截Ajax请求，并在http头中加Origin</li>
+    <li>
+      postMessage：H5新增特性。A网站中，Bwindow.postMessage('data', B网站)
+                  B网站中，Awindow.addEventListener('message', function)
+    </li>
+    <li>Hash：URL后面的#</li>
+  </ul>
+</body>
+</html>
