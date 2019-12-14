@@ -1,3 +1,7 @@
+/**
+ * commonJS
+ * 包的使用
+ */
 var http = require('http');
 var tools = require('./module/tool')
 var req = require('./module/request')
