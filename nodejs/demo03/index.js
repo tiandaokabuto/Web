@@ -23,6 +23,7 @@ fs.stat('package.json', (err, res)=> {
   }
 })
 
+// 创建目录
 // fs.mkdir('css', (err) => {
 //   if (err) {
 //     console.log(err)
@@ -32,7 +33,7 @@ fs.stat('package.json', (err, res)=> {
 //   }
 // })
 
-// 替换文件夹里面的内容
+// 写入文件，替换文件夹里面的内容
 // fs.writeFile('./css/style.css', 'background: blue', (err) => {
 //   if (err) {
 //     console.log(err)
@@ -42,7 +43,7 @@ fs.stat('package.json', (err, res)=> {
 //   }
 // })
 
-// 在原文件的内容里追加内容
+// 追加文件，在原文件的内容里追加内容
 // fs.appendFile('./css/style.css', 'background: blue', (err) => {
 //   if (err) {
 //     console.log(err)
@@ -52,6 +53,7 @@ fs.stat('package.json', (err, res)=> {
 //   }
 // })
 
+// 读取文件
 // fs.readFile('./css/style.css', (err, data) => {
 //   if (err) {
 //   console.log(err)
@@ -61,6 +63,7 @@ fs.stat('package.json', (err, res)=> {
 //   }
 // })
 
+// 读取目录
 // fs.readdir('./css', (err, data) => {
 //   if (err) {
 //     console.log(err)

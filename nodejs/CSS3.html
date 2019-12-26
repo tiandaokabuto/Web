@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .moving-ball {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: grey;
+      animation: move 2s linear 4 alternate;
+    }
+
+    @keyframes move {
+      0% {
+        transform: (0, 0);
+      }
+
+      80% {
+        transform: translate(280px, 0);
+      }
+
+      100% {
+        transform: translate(300px, 0);
+      }
+    }
+
+    .rotating-box {
+      width: 40px;
+      height: 40px;
+      background: grey;
+      animation: rotate 5s;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    #moved-ball {
+      background: blue;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="moving-ball"></div>
+  <div class="rotating-box"></div>
+  <div id="moved-ball"></div>
+  <script>
+    let ball = document.getElementById('moved-ball')
+    ball.addEventListener('mousedown', e => {
+      ball.style.position = 'absolute'
+      ball.style.zIndex = 99
+      moveBall(e.pageX, e.pageY)
+
+    })
+    let e = document.addEventListener('mousemove', event => {
+      moveBall(event.pageX, event.pageY)
+    })
+    ball.addEventListener('mouseup', e => {
+      document.removeEventListener('mousemove', e)
+    })
+    function moveBall(x, y) {
+      ball.style.left = x - ball.offsetWidth / 2 + 'px'
+      ball.style.top = y - ball.offsetHeight / 2 + 'px'
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+01.安装MongoDB，找到安装目录的bin文件夹，给系统配置环境变量
+02.创建一个文件夹，在文件夹里创建数据库，启动数据库服务mongod --dbpath 路径
+03.mongodb连接本地数据库，mongodb 地址 连接网络数据库
+04.show dbs查看本地的数据库
+05.use 数据库名，选择已存在或者未存在的数据库
+06.db.表名.insert(json数据)插入数据
+07.db.表名.find()查找
+08.find()中可以写查询条件，如
+    {"age":20}查找age=20
+    {"age":{$gt:20}}查找age>20
+    {"age":{$lt:20}}查找age<20
+    {"age":{$gte:20}}查找age>=20
+    {"age":{$lte:20}}查找age<=20
+    {"age":{$gte:20,$lte:30}}查找20<=age<=30
+    {"age":20,"name":"zhangsan"}查找age=20，姓名为zhangsan
+    {"title":/文章/},模糊查询title中有文章这两个字的的数据
+    {{},{name:1}}查找name列（注意没有双引号）
+    {{"age":{$lte:20}},{name:1}}查找age<=20的name列
+  update()可以修改数据，如
+    {"name":"zhangsan",{$set:{"age":16}}}修改name为zhangsan的age为16
+    {"name":"zhangsan",{{"age":16,"name":"lisi"}}}没有set，整个替代
+  remove()可以删除数据
+09.语句后面加上.explain("executionStats")可以查询具体执行时间
