@@ -9,7 +9,7 @@ import React, { Component } from 'react'
 class App extends Component {
   render () {
     return (
-      <div>Hello Kabuto</div>
+    <div className='my'>Hello Kabuto {false ? 'a' : 'b'}</div>
     )
   }
 }
