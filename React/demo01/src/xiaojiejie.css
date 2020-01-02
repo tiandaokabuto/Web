@@ -1,3 +1,26 @@
 .input {
   border: 3px solid pink;
 }
+.show {
+  opacity: 1;
+  transition: all 1.5s ease-in;
+}
+.hide {
+  /* opacity: 0;
+  transition: all 1.5s ease-in; */
+  animation: hide-item 2s ease-in forwards;
+}
+@keyframes hide-item {
+  0% {
+    opacity: 1;
+    color: yellow;
+  }
+  50% {
+    opacity: 0.5;
+    color: red;
+  }
+  100% {
+    opacity: 0;
+    color: green;
+  }
+}
