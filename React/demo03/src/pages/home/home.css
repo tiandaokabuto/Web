@@ -1,0 +1,34 @@
+@import '../../assets/css/reset.css';
+@import '~antd/dist/antd.css';
+.home {
+	height: 100%;
+	width: 100%;
+	background-color: #C2C9D8;
+	display: flex;
+}
+.left-wrapper {
+	flex: 0 0 25%;
+	padding: 10px 5px 10px 10px;
+}
+.right-wrapper {
+	flex: 0 0 75%;
+	display: flex;
+	flex-direction: column;
+}
+.main-wrapper {
+	flex: 0 0 75%;
+	display: flex;
+	background-color: blue;
+}
+.footer-wrapper {
+	flex: 0 0 25%;
+	background-color: green;
+}
+.content-wrapper {
+	flex: 0 0 70%;
+	background: yellow;
+}
+.attribute-wrapper {
+	flex: 0 0 30%;
+	background: orange;
+}
