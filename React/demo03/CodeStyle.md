@@ -10,9 +10,9 @@ my_project
 |-- scripts  脚手架自动化脚本
 |-- src      项目源码目录
     |--- assets         项目资源文件目录
-         |---  images       项目图片资源
-         |---  js           项目通用js
-         |---  css|less     项目通用样式
+        |---  images       项目图片资源
+        |---  js           项目通用js
+        |---  css|less     项目通用样式
     |--- components     通用组件
     |--- config         项目配置文件
     |--- data           测试数据目录

@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './pages/home/home';
+// import Home from './pages/home/Home';
+// import Panel from './pages/flow_chart/panel/Panel'
+import TestFlow from './pages/TestFlow/TestFlow'
 
-ReactDOM.render(<Home />, document.getElementById('root'));
+ReactDOM.render(<TestFlow />, document.getElementById('root'));
 

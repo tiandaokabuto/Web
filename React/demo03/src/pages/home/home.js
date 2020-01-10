@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 
-import NavMenu from '../../components/nav_menu/NavMenu'
+import NavMenu from './nav_menu/NavMenu'
+import Footer from './footer/Footer'
+import Action from './action/Action'
+import Attribute from './attribute/Attribute'
 
-import './home.css'
+import './home.less'
 
 class Home extends Component {
 	constructor(props) {
@@ -17,10 +20,16 @@ class Home extends Component {
 				</div>
 				<div className="right-wrapper">
 					<div className="main-wrapper">
-						<div className="content-wrapper"></div>
-						<div className="attribute-wrapper"></div>
+						<div className="action-wrapper">
+							<Action></Action>
+						</div>
+						<div className="attribute-wrapper">
+							<Attribute></Attribute>
+						</div>
 					</div>
-					<div className="footer-wrapper"></div>
+					<div className="footer-wrapper">
+						<Footer></Footer>
+					</div>
 				</div>
 			</div>
 		);
