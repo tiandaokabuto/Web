@@ -1,0 +1,22 @@
+.top-button-wrapper {
+  flex: 0 1 auto;
+  height: 10px;
+  display: flex;
+  margin-bottom: 6px;
+  font-size: 6px;
+}
+.top-button-wrapper .plus-btn {
+  flex: 0 0 auto;
+}
+.top-button-wrapper .plus-btn .icon {
+  color: #8AA0D3;
+  margin-right: 2px;
+}
+.top-button-wrapper .minus-btn {
+  flex: 0 0 auto;
+  margin-left: 5px;
+}
+.top-button-wrapper .minus-btn .icon {
+  color: #8AA0D3;
+  margin-right: 2px;
+}

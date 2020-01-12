@@ -1,0 +1,21 @@
+.search-input-wrapper {
+  flex: 1 1 auto;
+  height: 16px;
+  margin-bottom: 4px;
+}
+.search-input-wrapper .search-input {
+  position: relative;
+}
+.search-input-wrapper .search-input input {
+  width: 100%;
+  border: 1px solid #9C9C9C;
+  height: 12px;
+  font-size: 6px;
+  padding-left: 2px;
+}
+.search-input-wrapper .search-input .search-icon {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  font-size: 8px;
+}

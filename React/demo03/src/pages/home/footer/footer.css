@@ -1,0 +1,20 @@
+.footer-main-wrapper {
+  background: white;
+  height: 100%;
+  font-size: 6px;
+}
+.footer-main-wrapper .footer-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  background: #EBEBEB;
+  height: 14px;
+  line-height: 14px;
+}
+.footer-main-wrapper .footer-title-wrapper .footer-left-title {
+  width: 40px;
+  text-align: center;
+  background: white;
+}
+.footer-main-wrapper .footer-title-wrapper .footer-right-title .icon {
+  margin-right: 16px;
+}

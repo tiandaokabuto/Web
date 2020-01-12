@@ -1,0 +1,52 @@
+.attribute-main-wrapper {
+  height: 100%;
+  padding-bottom: 3px;
+  padding-left: 3px;
+}
+.attribute-main-wrapper .attribute-content-wrapper {
+  background: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.attribute-main-wrapper .attribute-content-wrapper .attribute-title {
+  flex: 0 1 14px;
+  height: 14px;
+  display: flex;
+  background: #EBEBEB;
+}
+.attribute-main-wrapper .attribute-content-wrapper .attribute-title .title-text {
+  flex: 1;
+  display: flex;
+  font-size: 6px;
+  height: 14px;
+  line-height: 14px;
+}
+.attribute-main-wrapper .attribute-content-wrapper .attribute-title .title-text .title {
+  text-align: center;
+  flex: 1;
+  background: white;
+}
+.attribute-main-wrapper .attribute-content-wrapper .attribute-title .title-text .title .text-icon {
+  margin-right: 2px;
+  font-size: 7px;
+}
+.attribute-main-wrapper .attribute-content-wrapper .attribute-title .title-text .unselected-title {
+  background: #727E9C;
+  color: white;
+}
+.attribute-main-wrapper .attribute-content-wrapper .attribute-title .title-icon {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  margin-right: 3px;
+}
+.attribute-main-wrapper .attribute-content-wrapper .attribute-title .title-icon .icon {
+  transform: rotateY(180deg);
+}
+.attribute-main-wrapper .attribute-content-wrapper .attribute-content {
+  flex: 1;
+  background: white;
+  overflow-y: auto;
+}

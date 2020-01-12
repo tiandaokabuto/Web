@@ -1,0 +1,8 @@
+.order-button-wrapper {
+  flex: 0 1 auto;
+  height: 24px;
+  margin-bottom: 2px;
+}
+.order-button-wrapper .order-button {
+  width: 100%;
+}

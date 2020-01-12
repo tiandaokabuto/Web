@@ -1,0 +1,32 @@
+.arrows-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.arrows-wrapper .line-wrapper {
+  height: 30px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.arrows-wrapper .line-wrapper .line {
+  width: 2px;
+  height: 25px;
+  background: black;
+}
+.arrows-wrapper .line-wrapper .arrow {
+  width: 0px;
+  height: 0px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+.arrows-wrapper .frame-wrapper {
+  height: 30px;
+  width: 100px;
+  border: 1px dotted grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

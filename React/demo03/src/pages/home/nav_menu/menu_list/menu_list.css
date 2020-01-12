@@ -1,0 +1,34 @@
+.menu-list-wrapper {
+  flex: 1 1 auto;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+  width: 100%;
+}
+.menu-list-wrapper .ant-tree {
+  font-size: 8px;
+}
+.menu-list-wrapper .ant-tree li {
+  padding: 0 !important;
+}
+.menu-list-wrapper .ant-tree li .ant-tree-switcher {
+  height: 12px;
+  width: 12px;
+  line-height: 12px;
+}
+.menu-list-wrapper .ant-tree li .ant-tree-node-content-wrapper {
+  height: 12px;
+  line-height: 12px;
+  padding: 0;
+}
+.menu-list-wrapper .ant-tree li .ant-tree-node-content-wrapper .ant-tree-title {
+  height: 12px;
+  line-height: 12px;
+}
+.menu-list-wrapper .ant-tree li .ant-tree-node-content-wrapper .ant-tree-title span {
+  height: 12px;
+  line-height: 12px;
+}
+.menu-list-wrapper .ant-tree li .ant-tree-child-tree {
+  padding-left: 6px;
+}
