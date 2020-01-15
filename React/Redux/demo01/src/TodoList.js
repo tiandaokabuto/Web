@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import "antd/dist/antd.css";
-import { Input, Button, List } from "antd";
 
 import store from "./store/index";
-import { CHANGE_INPUT, ADD_ITEM, DELETE_ITEM} from './store/actionType'
+import { changeInputAction, addItemAction, deleteItemAction, getTodoList} from './store/actionCreator'
 import TodoListUi from './TodoListUi'
 
 /**
@@ -26,32 +25,26 @@ class TodoList extends Component {
 		// 订阅redux的状态
 		store.subscribe(this.storeChange)
 	}
+	componentDidMount() {
+		// store.dispatch(getTodoList())
+		// const action = getTodoList()
+		// console.log(action)
+	}
 	// 修改组件的state
 	storeChange() {
 		this.setState(store.getState())
 	}
 	// 修改redux里面的state需要创建action
 	changeInput(e) {
-		const action = {
-			type: CHANGE_INPUT,
-			value: e.target.value
-		}
-		store.dispatch(action)
+		store.dispatch(changeInputAction(e.target.value))
 	}
 	//
 	clickBtn() {
-		const action = {
-			type: ADD_ITEM
-		}
-		store.dispatch(action)
+		store.dispatch(addItemAction())
 	}
 	//
 	deleteItem(index) {
-		const action = {
-			type: DELETE_ITEM,
-			index: index
-		}
-		store.dispatch(action)
+		store.dispatch(deleteItemAction(index))
 	}
 	render() {
 		return (

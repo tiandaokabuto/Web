@@ -10,17 +10,8 @@ const hostname = '192.168.43.145'
 
 socket.setEncoding = "UTF-8"
 
-// let count = 0
 socket.connect(port, hostname, function() {
   socket.write("hello server")
-  // setInterval(() => {
-  //   socket.write('msg' + count)
-  //   count++
-  // }, 3000)
-  // let data = {
-  //   taskID: "123"
-  // }
-  // socket.write(JSON.stringify(data))
 })
 
 socket.on("data", function(msg) {

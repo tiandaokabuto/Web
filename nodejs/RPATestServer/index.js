@@ -1,5 +1,5 @@
 const net = require( 'net' );
-const port = 3000;
+const port = 3001;
 const hostname = '192.168.72.54';
 
 // 定义两个变量， 一个用来计数，一个用来保存客户端
@@ -12,15 +12,11 @@ const server = new net.createServer();
 server.on('connection', (client) => {
   client.name = ++clientName; // 给每一个client起个名
   clients[client.name] = client; // 将client保存在clients
-  // let count
   client.on('data', function (msg) { //接收client发来的信息
     console.log(`客户端${client.name}发来一个信息：${msg}`);
     // client.send(msg)
-    console.log(msg);
-    client.write(msg)
-    // setInterval(() => {
-    //   client.write(count)
-    // }, 3000);
+    console.log(JSON.parse(msg));
+    // client.write(msg)
   });
 
   client.on('error', function (e) { //监听客户端异常
