@@ -1,31 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { TOGGLE_COMPLETE } from './redux/action/type'
+import { connect } from 'react-redux'
 
-class List extends Component {
-    componentDidMount() {
-        console.log(this.props)
-    }
-    completeHandle(id) {
-        this.props.completeHandle(id)
-    }
-    showList(title){
+
+const List = props => {
+    const showList = title => {
         let renderNode
-        if (this.props.title === 0) {
+        if (title === 0) {
             renderNode = (
                 <ul>
                     {
-                        this.props.alls.map(item => {
-                            return <li onClick={this.completeHandle.bind(this, item.id)} key={item.id}>{item.value}</li>
+                        props.alls.map(item => {
+                            return <li onClick={props.completeHandle.bind(this, item.id)} key={item.id}>{item.value}</li>
                         })
                     }
                 </ul>
             )
-        } else if (this.props.title === 1) {
+        } else if (title === 1) {
             renderNode = (
                 <ul>
                     {
-                        this.props.alls.map(item => {
+                        props.alls.map(item => {
                             if(item.complete === false) {
-                                return <li onClick={this.props.completeHandle.bind(this, item.id)} key={item.id}>{item.value}</li>
+                                return <li onClick={props.completeHandle.bind(this, item.id)} key={item.id}>{item.value}</li>
                             }
                         })
                     }
@@ -35,9 +32,9 @@ class List extends Component {
             renderNode = (
                 <ul>
                     {
-                        this.props.alls.map(item => {
+                        props.alls.map(item => {
                             if(item.complete) {
-                                return <li onClick={this.props.completeHandle.bind(this, item.id)} key={item.id}>{item.value}</li>
+                                return <li onClick={props.completeHandle.bind(this, item.id)} key={item.id}>{item.value}</li>
                             }
                         })
                     }
@@ -46,13 +43,29 @@ class List extends Component {
         }
         return renderNode
     }
-    render() {
-        return (
-            <div>
-                {this.showList(this.props.title)}
-            </div>
-        )
+    return (
+        <div>
+            {showList(props.title)}
+        </div>
+    )
+}
+
+const mapDispatch = dispatch => {
+    return {
+        completeHandle(id) {
+            dispatch({
+                type: TOGGLE_COMPLETE,
+                id
+            })
+        }
     }
 }
 
-export default List;
+const mapState = state => {
+    return {
+        alls: state.alls,
+        title: state.title
+    }
+}
+
+export default connect(mapState, mapDispatch)(List);

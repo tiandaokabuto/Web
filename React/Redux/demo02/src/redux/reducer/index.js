@@ -39,7 +39,6 @@ export default (state = defaultState, action) => {
         newState.title = action.title
         return newState
     } else if (action.type === CHANGE_INPUT) {
-        console.log(action.value)
         let newState = JSON.parse(JSON.stringify(state))
         newState.inputValue = action.value
         return newState

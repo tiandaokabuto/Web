@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import TodoList from './TodoList'
+import ReactDom from 'react-dom'
+import Parent from './Parent'
 
-ReactDOM.render(<TodoList />, document.getElementById('root'));
-
+ReactDom.render(<Parent/>, document.getElementById('root'))
