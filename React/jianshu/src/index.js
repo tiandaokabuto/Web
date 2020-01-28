@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { GlobalStyle } from './style'
+// import { IconStyle } from './statics/iconfont/iconfont'
+import './statics/iconfont/iconfont.css'
+import './style.css'
 import App from './App';
 
-ReactDOM.render(<div><GlobalStyle/><App/></div>, document.getElementById('root'));
+ReactDOM.render(<App></App>, document.getElementById('root'));

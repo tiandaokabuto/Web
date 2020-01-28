@@ -1,172 +1,125 @@
 import styled from 'styled-components';
-import logoPic from '../../statics/logo.png';
 
-export const HeaderWrapper = styled.div`
-	z-index: 1;
-	position: relative;
-	height: 56px;
-	border-bottom: 1px solid #f0f0f0;
-`;
-
-export const Logo = styled.div`
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: block;
-	width: 100px;
-	height: 56px;
-	background: url(${logoPic});
-	background-size: contain;
-`;
-
-export const Nav = styled.div`
+export const HomeWrapper = styled.div`
+	overflow: hidden;
 	width: 960px;
-	height: 100%;
-	padding-right: 70px;
-	box-sizing: border-box;
 	margin: 0 auto;
 `;
 
-export const NavItem = styled.div`
-	line-height: 56px;
-	padding: 0 15px;
-	font-size: 17px;
-	color: #333;
-	&.left {
-		float: left;
-	}
-	&.right {
-		float: right;
-		color: #969696;
-	}
-	&.active {
-		color: #ea6f5a;
-	}
-`;
-
-export const SearchWrapper = styled.div`
-	position: relative;
+export const HomeLeft = styled.div`
 	float: left;
-	.zoom {
-		position: absolute;
-		right: 5px;
-		bottom: 5px;
-		width: 30px;
-		line-height: 30px;
-		border-radius: 15px;
-		text-align: center;
-		&.focused {
-			background: #777;
-			color: #fff;
-		}
+	margin-left: 15px;
+	padding-top: 30px;
+	width: 625px;
+	.banner-img {
+		width: 625px;
+		height: 270px;
 	}
 `;
 
-export const NavSearch = styled.input.attrs({
-	placeholder: '搜索'
-})`
-	width: 160px;
-	height: 38px;
-	padding: 0 30px 0 20px;
-	margin-top: 9px;
-	margin-left: 20px;
-	box-sizing: border-box;
-	border: none;
-	outline: none;
-	border-radius: 19px;
-	background: #eee;
-	font-size: 14px;
-	color: #666;
-	&::placeholder {
-		color: #999;
-	}
-	&.focused {
-		width: 240px;
-	}
-	&.slide-enter {
-		transition: all .2s ease-out;
-	}
-	&.slide-enter-active {
-		width: 240px;
-	}
-	&.slide-exit {
-		transition: all .2s ease-out;
-	}
-	&.slide-exit-active {
-		width: 160px;
-	}
-`;
-
-export const SearchInfo = styled.div`
-	position: absolute;
-	left: 0;
-	top: 56px;
-	width: 240px;
-	padding: 0 20px;
-	box-shadow: 0 0 8px rgba(0, 0, 0, .2);
-	background: #fff;
-`;
-
-export const SearchInfoTitle = styled.div`
-	margin-top: 20px;
-	margin-bottom: 15px;
-	line-height: 20px;
-	font-size: 14px;
-	color: #969696;
-`;
-
-export const SearchInfoSwitch = styled.span`
+export const HomeRight = styled.div`
+	width: 280px;
 	float: right;
-	font-size: 13px;
-	cursor: pointer;
-	.spin {
+`;
+
+export const TopicWrapper = styled.div`
+	overflow: hidden;
+	padding: 20px 0 10px 0;
+	margin-left: -18px;
+	border-bottom: 1px solid #dcdcdc;
+`;
+
+export const TopicItem = styled.div`
+	float: left;
+	height: 32px;
+	line-height: 32px;
+	margin-left: 18px;
+	margin-bottom: 18px;
+	padding-right: 10px
+	background: #f7f7f7;
+	font-size: 14px;
+	color: #000;
+	border: 1px solid #dcdcdc;
+	border-radius: 4px;
+	.topic-pic {
 		display: block;
 		float: left;
-		font-size: 12px;
-		margin-right: 2px;
-		transition: all .2s ease-in;
-		transform-origin: center center;
+		width: 32px;
+		height: 32px;
+		margin-right: 10px;
 	}
 `;
 
-export const SearchInfoList = styled.div`
+export const ListItem = styled.div`
 	overflow: hidden;
+	padding: 20px 0;
+	border-bottom: 1px solid #dcdcdc;
+	.pic {
+		display: block;
+		width: 125px;
+		height: 100px;
+		float: right;
+		border-radius: 10px;
+	}
 `;
 
-export const SearchInfoItem = styled.a`
-	display: block;
+export const ListInfo =	styled.div`
+	width: 500px;
 	float: left;
-	line-height: 20px;
-	padding: 0 5px;
-	margin-right: 10px;
-	margin-bottom: 15px;
-	font-size: 12px;
-	border: 1px solid #ddd;
-	color: #787878;
+	.title {
+		line-height: 27px;
+		font-size: 18px;
+		font-weight: bold;
+		color: #333;
+	}
+	.desc {
+		line-height: 24px;
+		font-size: 13px;
+		color: #999;
+	}
+`;
+
+export const RecommendWrapper = styled.div`
+	margin: 30px 0;
+	width: 280px;
+`;
+
+export const RecommendItem = styled.div`
+	width: 280px;
+	height: 50px;
+	background: url(${(props) => props.imgUrl});
+	background-size: contain;
+`;
+
+export const WriterWrapper = styled.div`
+	width: 278px;
+	border: 1px solid #dcdcdc;
 	border-radius: 3px;
+	height: 300px;
+	line-height: 300px;
+	text-align: center;
 `;
 
-export const Addition = styled.div`
-	position: absolute;
-	right: 0;
-	top: 0;
-	height: 56px;
+export const LoadMore = styled.div`
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	margin: 30px 0;
+	background: #a5a5a5;
+	text-align:center;
+	border-radius: 20px;
+	color: #fff;
+	cursor: pointer;
 `;
 
-export const Button = styled.div`
-	float: right;
-	margin-top: 9px;
-	margin-right: 20px;
-	padding: 0 20px;
-	line-height: 38px;
-	border-radius: 19px;
-	border: 1px solid #ec6149;
-	font-siz: 14px;
-	&.reg {
-		color: #ec6149;
-	}
-	&.writting {
-		color: #fff;
-		background: #ec6149;
-	}
+export const BackTop = styled.div`
+	position: fixed;
+	right: 100px;
+	bottom: 100px;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	border: 1px solid #ccc;
+	font-size: 14px;
 `
