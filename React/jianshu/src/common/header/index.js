@@ -1,17 +1,23 @@
 import React from 'react';
 import { HeaderWrapper, Logo, Nav, NavItem, NavSearch, Addition, Button, SearchWrapper, SearchInfo, SearchInfoTitle, SearchInfoSwitch, SearchInfoItem } from './style'
+import { Link } from 'react-router-dom'
 import  * as actionCreator from './store/actionCreator'
+import { logout } from '../../pages/login/store/actionCreator'
 import { CSSTransition } from 'react-transition-group'
 import { connect } from 'react-redux'
 
 const Header = props => {
     return (
         <HeaderWrapper>
-            <Logo />
+            <Link to="/"><Logo /></Link>
             <Nav>
                 <NavItem className="left active">首页</NavItem>
                 <NavItem className="left">下载App</NavItem>
-                <NavItem className="right">登录</NavItem>
+                {
+                    props.login ?
+                    <NavItem className="right" onClick={props.logout}>退出</NavItem> :
+                    <Link to="/login"><NavItem className="right">登录</NavItem></Link>
+                }
                 <NavItem className="right">
                     <i className="iconfont">&#xe636;</i>
                 </NavItem>
@@ -30,9 +36,11 @@ const Header = props => {
             </Nav>
             <Addition>
                 <Button className="reg">注册</Button>
-                <Button className="writting">
-                    <i className="iconfont">&#xe615;</i>写文章
-                </Button>
+                <Link to="/write">
+                    <Button className="writting">
+                        <i className="iconfont">&#xe615;</i>写文章
+                    </Button>
+                </Link>
             </Addition>
         </HeaderWrapper>
     );
@@ -69,7 +77,8 @@ const mapState = state => {
         focused: state.get('header').get('focused'), // 使用了redux-immutable和immutable
         mouseIn: state.get('header').get('mouseIn'),
         list: state.get('header').get('list'),
-        page: state.get('header').get('page')
+        page: state.get('header').get('page'),
+        login: state.get('login').get('login')
     }
 }
 const mapDispatch = dispatch => {
@@ -92,6 +101,10 @@ const mapDispatch = dispatch => {
         },
         changePage() {
             dispatch(actionCreator.changePage())
+        },
+        logout() {
+            dispatch(logout())
+            // console.log('a')
         }
     }
 }

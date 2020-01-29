@@ -45,7 +45,7 @@ html, body, div, span, applet, object, iframe,
     /**
     * 解决滚动条挤压宽度
     */
-    html {
+    /* html {
         overflow-y: scroll;
     }
     
@@ -61,4 +61,4 @@ html, body, div, span, applet, object, iframe,
     body {
         width: 100vw;
         overflow: hidden;
-    }
+    } */
